@@ -1,2 +1,2 @@
-# opuaytfrfr.netlify.app
-MY OWN NETLIFY WEBSITE BUT OPEN SOURCE
+# Quick Info
+This is a repostiory for my website (opuaytfrfr.netlify.app)
