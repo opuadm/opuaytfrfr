@@ -2,7 +2,13 @@
 <html>
   <head>
     <link rel="stylesheet" href="https://unpkg.com/7.css">
-    <title>Opua's Netlify Website</title>
+    <title>Opua's Website!</title>
+    <style>
+      /* Optional: Add some custom styles for the tabs */
+      .tabs button[aria-selected="true"] {
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
     <h3>Welcome to my Github Website :D!</h3>
@@ -12,12 +18,22 @@
         <button role="tab" aria-controls="tab-B">Tab B</button>
         <button role="tab" aria-controls="tab-C">Tab C</button>
         <button role="tab" aria-controls="tab-D" disabled>Tab D</button>
-     </menu>
-     <article role="tabpanel" id="tab-A">Tab A is active</article>
-     <article role="tabpanel" id="tab-B" hidden>Tab B is active</article>
-     <article role="tabpanel" id="tab-C" hidden>Tab C is active</article>
-     <article role="tabpanel" id="tab-D" hidden>Tab D is inactive</article>
-</section>
+      </menu>
+      <article role="tabpanel" id="tab-A">Tab A is active</article>
+      <article role="tabpanel" id="tab-B" hidden>Tab B is active</article>
+      <article role="tabpanel" id="tab-C" hidden>Tab C is active</article>
+      <article role="tabpanel" id="tab-D" hidden>Tab D is inactive</article>
+    </section>
     <a href="https://file.io/BOXAXjLvq9jh">Click on me to download VMware Workstation Pro 17.5.2</a>
+    <script>
+      document.querySelectorAll('.tabs [role="tab"]').forEach(tab => {
+        tab.addEventListener('click', () => {
+          document.querySelectorAll('.tabs [role="tab"]').forEach(t => t.setAttribute('aria-selected', 'false'));
+          tab.setAttribute('aria-selected', 'true');
+          document.querySelectorAll('.tabs [role="tabpanel"]').forEach(panel => panel.hidden = true);
+          document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+        });
+      });
+    </script>
   </body>
 </html>
