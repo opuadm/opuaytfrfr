@@ -6,12 +6,18 @@
   </head>
   <body>
     <h3>Welcome to my Github Website :D!</h3>
-    <div class="field-row" style="max-width: 600px">
-      <label>Test:</label>
-      <label>Metamask</label>
-      <input type="range" min="0.5" max="25" value="0.0005"/>
-      <label>IPTV</label>
-    </div>
+    <section class="tabs">
+      <menu role="tablist" aria-label="Tabs Template">
+        <button role="tab" aria-controls="tab-A" aria-selected="true">Tab A</button>
+        <button role="tab" aria-controls="tab-B">Tab B</button>
+        <button role="tab" aria-controls="tab-C">Tab C</button>
+        <button role="tab" aria-controls="tab-D" disabled>Tab D</button>
+     </menu>
+     <article role="tabpanel" id="tab-A">Tab A is active</article>
+     <article role="tabpanel" id="tab-B" hidden>Tab B is active</article>
+     <article role="tabpanel" id="tab-C" hidden>Tab C is active</article>
+     <article role="tabpanel" id="tab-D" hidden>Tab D is inactive</article>
+</section>
     <a href="https://file.io/BOXAXjLvq9jh">Click on me to download VMware Workstation Pro 17.5.2</a>
   </body>
 </html>
