@@ -1,1 +1,4 @@
-soon
+@font-face {
+  font-family: 'CoolFontReal'; /* Name your font family */
+  src: url('fonts/seguibli.ttf'); /* Locate the .ttf file within your directory*/
+}
