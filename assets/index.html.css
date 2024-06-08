@@ -59,7 +59,7 @@ body {
 }
 
 p, h2, button, input {
-	animation: start 1s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+	animation: start 2.1s cubic-bezier(0.05, 0.9, 0.7, 1) forwards;
 }
 
 button {
