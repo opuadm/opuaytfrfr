@@ -1,9 +1,0 @@
-@font-face {
-  font-family: 'SegoeUI'; /* Name your font family */
-  src: url('fonts/segoeui.ttf'); /* Locate the .ttf file within your directory*/
-}
-
-@font-face {
-  font-family: 'SegoeSymbol'; /* Name your font family */
-  src: url('fonts/seguisym.ttf'); /* Locate the .ttf file within your directory*/
-}
