@@ -1,81 +1,19 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="https://unpkg.com/7.css">
-    <link rel="stylesheet" href="css/fonts.css">
-    <title>Opua's Website!</title>
-    <style>
-      body {
-        background-image: url('Images/img0.jpg');
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-      }
-      .articlebg {
-         max-width: 725px;
-         background-color: rgb(24, 0, 82); /* Dark purple color of Windows 8 Start menu */
-      }
-      .iptvcounter-label {
-        color: white;
-        font-family: 'segoeui', 'segoesymbol', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      }
-      .title1 {
-        color: white;
-        font-family: 'segoeui', 'segoesymbol', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        font-size: 48px;
-      }
-  </style>
-    </style>
-  </head>
-  <body>
-    <center><p class="title1">Welcome to my Github Website!</p></center>
-    <section class="tabs" style="max-width: 725px">
-      <menu role="tablist" aria-label="Tabs Template">
-        <button role="tab" aria-controls="tab-A" aria-selected="true">Idk some random tab</button>
-        <button role="tab" aria-controls="tab-B">About</button>
-        <button role="tab" aria-controls="vmware">More</button>
-      </menu>
-      <article class="articlebg" role="tabpanel" id="tab-A">
-        <div class="field-row">
-          <label class="iptvcounter-label">IPTV Counter</label>
-          <div class="is-vertical">
-            <input class="has-box-indicator" type="range" min="1" max="15" step="0.5" value="1" />
-          </div>
-        </div>
-      </article>
-      <article class="articlebg" role="tabpanel" id="tab-B" hidden>TEST!!!</article>
-      <article class="articlebg" role="tabpanel" id="vmware" hidden>
-        <div class="window active" style="max-width: 650px">
-          <div class="title-bar">
-            <div class="title-bar-text">VMware Workstation Pro 17.5.2 Download Link + More!</div>
-            <div class="title-bar-controls">
-              <button aria-label="Minimize"></button>
-              <button aria-label="Maximize"></button>
-              <button aria-label="Close"></button>
-            </div>
-          </div>
-          <div class="window-body has-space">
-            <div class="field-row">
-              <input id="vmwaredselect" type="radio" name="selection">
-              <label for="vmwaredselect"><a href="https://file.io/BOXAXjLvq9jh">Click on me to download VMware Workstation Pro 17.5.2</a></label>
-            </div>
-            <div class="field-row">
-              <input id="iptvselect" type="radio" name="selection">
-              <label for="iptvselect">i need I P T V service provider</label>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
-    <script>
-      document.querySelectorAll('.tabs [role="tab"]').forEach(tab => {
-        tab.addEventListener('click', () => {
-          document.querySelectorAll('.tabs [role="tab"]').forEach(t => t.setAttribute('aria-selected', 'false'));
-          tab.setAttribute('aria-selected', 'true');
-          document.querySelectorAll('.tabs [role="tabpanel"]').forEach(panel => panel.hidden = true);
-          document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
-        });
-      });
-    </script>
-  </body>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+	<link rel="stylesheet" href="assets/fonts.css">
+	<link rel="stylesheet" href="assets/MetroAppUI.css">
+	<link rel="stylesheet" href="assets/metroui.css">
+	<link rel="stylesheet" href="assets/main.css">
+	<link rel="stylesheet" href="assets/index.html.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>what</title>
+</head>
+<body>
+<div class="welcome">
+
+<h1>Placeholder + i took the code from IPTVman lmao (credits to him lmao)</h1>
+</div>
+</body>
 </html>
