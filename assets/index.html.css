@@ -7,7 +7,7 @@ body {
 }
 
 .welcome {
-    background-color: rgb(24,0,82);
+    background-color: rgb(12, 5, 54);
     color: white;
     font-weight: 400;
     transform: rotateY(-70deg) scale(0.4);
