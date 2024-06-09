@@ -11,7 +11,7 @@
       cursor: move;
       position: absolute;
       right: 0px;
-      top: 36px;
+      top: 92px;
     }
     body {
       margin: 0;
@@ -88,10 +88,10 @@
 
     function updatePosition() {
         const elementRight = parseInt(window.getComputedStyle(element).right, 10);
-        const newRight = 65 - elementRight;
+        const newRight = 320 - elementRight;
 
         if (newRight !== 0) {
-            element.style.right = '65px';
+            element.style.right = '320px';
         }
     }
 
