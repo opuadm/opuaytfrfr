@@ -48,10 +48,13 @@
     </div>
   </div>
   <script>
+    function getRandomFloat(min, max) {
+      return Math.random() * (max - min) + min;
+    }
     window.onload = function() {
         // Animate the width of the div with a delay of 0.5 seconds
-        gsap.to("#progress1", { duration: 1, width: '25%', ease: "power2.inOut", delay: 0.5 });
-        gsap.to("#progress1", { duration: 1, width: '42%', ease: "power2.inOut", delay: getRandomFloat(1.60, 2.05) });
+      gsap.to("#progress1", { duration: 1, width: '25%', ease: "power2.inOut", delay: 0.5 });
+      gsap.to("#progress1", { duration: 1, width: '42%', ease: "power2.inOut", delay: getRandomFloat(1.60, 2.05) });
     };
   </script>
   
