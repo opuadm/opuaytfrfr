@@ -10,8 +10,6 @@
     .draggable {
       cursor: move;
       position: absolute;
-      right: 862px;
-      top: 211px;
     }
     body {
       margin: 0;
@@ -126,25 +124,26 @@
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
     
-            let elementLeft = element.offsetLeft;
-            let elementTop = element.offsetTop;
+            // Set initial position in pixels
+            let initialLeft = 862; // Example: 100px from the left
+            let initialTop = 211;  // Example: 100px from the top
     
             // Ensure the element stays within the bounds on load
-            if (elementLeft + element.offsetWidth > windowWidth) {
-                elementLeft = windowWidth - element.offsetWidth;
+            if (initialLeft + element.offsetWidth > windowWidth) {
+                initialLeft = windowWidth - element.offsetWidth;
             }
-            if (elementTop + element.offsetHeight > windowHeight) {
-                elementTop = windowHeight - element.offsetHeight;
+            if (initialTop + element.offsetHeight > windowHeight) {
+                initialTop = windowHeight - element.offsetHeight;
             }
-            if (elementLeft < 0) {
-                elementLeft = 0;
+            if (initialLeft < 0) {
+                initialLeft = 0;
             }
-            if (elementTop < 0) {
-                elementTop = 0;
+            if (initialTop < 0) {
+                initialTop = 0;
             }
     
-            element.style.left = elementLeft + "px";
-            element.style.top = elementTop + "px";
+            element.style.left = initialLeft + "px";
+            element.style.top = initialTop + "px";
         }
     
         // Ensure the element is in bounds on load
