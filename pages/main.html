@@ -79,16 +79,9 @@
                 element.style.top = newTop + "px";
             }
     
-            // Calculate the right position to keep the element 467px from the right edge
-            const windowWidth = window.innerWidth;
-            const newRight = windowWidth - newLeft - element.offsetWidth;
-    
-            if (newRight >= 467 && newRight <= windowWidth - 40) {
+            // Ensure the element does not go offscreen on the left or right
+            if (newLeft >= 0 && newLeft <= window.innerWidth - element.offsetWidth) {
                 element.style.left = newLeft + "px";
-            } else if (newRight < 467) {
-                element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
-            } else if (newRight > windowWidth - 40) {
-                element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
             }
         }
     
@@ -103,25 +96,33 @@
         // Update position on window resize
         window.addEventListener('resize', () => {
             const windowWidth = window.innerWidth;
-            const elementLeft = element.offsetLeft;
-            const elementRight = windowWidth - elementLeft - element.offsetWidth;
+            const windowHeight = window.innerHeight;
     
-            if (elementRight < 467) {
-                element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
-            } else if (elementRight > windowWidth - 40) {
-                element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
+            const elementLeft = element.offsetLeft;
+            const elementTop = element.offsetTop;
+    
+            // Ensure the element stays within the bounds on resize
+            if (elementLeft + element.offsetWidth > windowWidth) {
+                element.style.left = (windowWidth - element.offsetWidth) + "px";
+            }
+            if (elementTop + element.offsetHeight > windowHeight) {
+                element.style.top = (windowHeight - element.offsetHeight) + "px";
             }
         });
     
         // Initial call to set the position correctly on load
         const windowWidth = window.innerWidth;
-        const elementLeft = element.offsetLeft;
-        const elementRight = windowWidth - elementLeft - element.offsetWidth;
+        const windowHeight = window.innerHeight;
     
-        if (elementRight < 467) {
-            element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
-        } else if (elementRight > windowWidth - 40) {
-            element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
+        const elementLeft = element.offsetLeft;
+        const elementTop = element.offsetTop;
+    
+        // Ensure the element stays within the bounds on load
+        if (elementLeft + element.offsetWidth > windowWidth) {
+            element.style.left = (windowWidth - element.offsetWidth) + "px";
+        }
+        if (elementTop + element.offsetHeight > windowHeight) {
+            element.style.top = (windowHeight - element.offsetHeight) + "px";
         }
     });
   </script>
