@@ -49,47 +49,13 @@
   
   <!-- JavaScript for drag functionality -->
   <script>
-    // Function to make an element draggable
-    function makeDraggable(element) {
-      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-      element.onmousedown = dragMouseDown;
-
-      function dragMouseDown(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        document.onmouseup = closeDragElement;
-        document.onmousemove = elementDrag;
-      }
-
-      function elementDrag(e) {
-        e = e || window.event;
-        e.preventDefault();
-        pos1 = pos3 - e.clientX;
-        pos2 = pos4 - e.clientY;
-        pos3 = e.clientX;
-        pos4 = e.clientY;
-        element.style.top = (element.offsetTop - pos2) + "px";
-        element.style.left = (element.offsetLeft - pos1) + "px";
-      }
-
-      function closeDragElement() {
-        document.onmouseup = null;
-        document.onmousemove = null;
-      }
-    }
-
-    // Make all elements with class 'draggable' draggable
-    document.querySelectorAll('.draggable').forEach(makeDraggable);
-
     document.addEventListener('DOMContentLoaded', (event) => {
         const element = document.querySelector('.draggable');
     
         function updatePosition() {
             const windowWidth = window.innerWidth;
     
-            // Calculate the right position to keep the element 870px from the right edge
+            // Calculate the right position to keep the element 467px from the right edge
             const newRight = Math.max(40, windowWidth - 467 - element.offsetWidth);
             element.style.right = newRight + 'px';
     
@@ -108,6 +74,58 @@
     
         // Initial call to set the position correctly on load
         updatePosition();
+    
+        function makeDraggable(element) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            element.onmousedown = dragMouseDown;
+    
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+    
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+    
+                const newTop = element.offsetTop - pos2;
+                const newLeft = element.offsetLeft - pos1;
+    
+                // Ensure the element does not go offscreen on the top or bottom
+                if (newTop >= 0 && newTop <= window.innerHeight - element.offsetHeight) {
+                    element.style.top = newTop + "px";
+                }
+    
+                // Calculate the right position to keep the element 467px from the right edge
+                const windowWidth = window.innerWidth;
+                const newRight = windowWidth - newLeft - element.offsetWidth;
+    
+                if (newRight >= 467 && newRight <= windowWidth - 40) {
+                    element.style.left = newLeft + "px";
+                    element.style.right = '467px';
+                } else if (newRight < 467) {
+                    element.style.right = '467px';
+                } else if (newRight > windowWidth - 40) {
+                    element.style.right = '40px';
+                }
+            }
+    
+            function closeDragElement() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+    
+        // Make all elements with class 'draggable' draggable
+        document.querySelectorAll('.draggable').forEach(makeDraggable);
     });
   </script>
 </body>
