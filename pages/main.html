@@ -1,78 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/7.css">
-    <title>Opua's Website - Main</title>
-    <style>
-      /* Additional CSS for draggable window */
-      .draggable {
-        cursor: move;
-        position: absolute; /* Set position to absolute */
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        background-image: url('https://wparena.com/wp-content/uploads/2009/09/img0.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        height: 100vh;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="window active draggable" style="max-width: 750px; width: 450px">
-      <div class="title-bar">
-        <div class="title-bar-text">Main</div>
-        <div class="title-bar-controls">
-          <button aria-label="Minimize"></button>
-          <button aria-label="Maximize"></button>
-          <button aria-label="Close"></button>
-        </div>
-      </div>
-      <div class="window-body has-space">
-        <button>Test</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/7.css">
+  <title>Opua's Website - Main</title>
+  <style>
+    /* Additional CSS for draggable window */
+    .draggable {
+      cursor: move;
+      position: absolute;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://wparena.com/wp-content/uploads/2009/09/img0.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="window active draggable" style="max-width: 750px; width: 325px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Main</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close"></button>
       </div>
     </div>
-    
-    <!-- JavaScript for drag functionality -->
-    <script>
-      // Function to make an element draggable
-      function makeDraggable(element) {
-        let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-        element.onmousedown = dragMouseDown;
-      
-        function dragMouseDown(e) {
-          e = e || window.event;
-          e.preventDefault();
-          pos3 = e.clientX;
-          pos4 = e.clientY;
-          document.onmouseup = closeDragElement;
-          document.onmousemove = elementDrag;
-        }
-      
-        function elementDrag(e) {
-          e = e || window.event;
-          e.preventDefault();
-          pos1 = pos3 - e.clientX;
-          pos2 = pos4 - e.clientY;
-          pos3 = e.clientX;
-          pos4 = e.clientY;
-          element.style.top = (element.offsetTop - pos2) + "px";
-          element.style.left = (element.offsetLeft - pos1) + "px";
-        }
-      
-        function closeDragElement() {
-          document.onmouseup = null;
-          document.onmousemove = null;
-        }
+    <div class="window-body has-space">
+      <ul role="menubar" class="can-hover">
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          File
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">Open <span>Ctrl+O</span></a></li>
+            <li role="menuitem"><a href="#menubar">Save <span>Ctrl+S</span></a></li>
+            <li role="menuitem" class="has-divider"><a href="#menubar">Save As... <span>Ctrl+Shift+S</span></a></li>
+            <li role="menuitem"><a href="#menubar">Exit</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Edit
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">Undo</a></li>
+            <li role="menuitem"><a href="#menubar">Copy</a></li>
+            <li role="menuitem"><a href="#menubar">Cut</a></li>
+            <li role="menuitem" class="has-divider"><a href="#menubar">Paste</a></li>
+            <li role="menuitem"><a href="#menubar">Delete</a></li>
+            <li role="menuitem"><a href="#menubar">Find...</a></li>
+            <li role="menuitem"><a href="#menubar">Replace...</a></li>
+            <li role="menuitem"><a href="#menubar">Go to...</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          View
+          <ul role="menu">
+            <li role="menuitem" tabindex="0" aria-haspopup="true">
+              Zoom
+              <ul role="menu">
+                <li role="menuitem"><button>Zoom In</button></li>
+                <li role="menuitem"><button>Zoom Out</button></li>
+              </ul>
+            </li>
+            <li role="menuitem"><a href="#menubar">Status Bar</a></li>
+          </ul>
+        </li>
+        <li role="menuitem" tabindex="0" aria-haspopup="true">
+          Help
+          <ul role="menu">
+            <li role="menuitem"><a href="#menubar">View Help</a></li>
+            <li role="menuitem"><a href="#menubar">About</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- JavaScript for drag functionality -->
+  <script>
+    // Function to make an element draggable
+    function makeDraggable(element) {
+      let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      element.onmousedown = dragMouseDown;
+
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        document.onmousemove = elementDrag;
       }
-      
-      // Make all elements with class 'draggable' draggable
-      const draggableElements = document.querySelectorAll('.draggable');
-      draggableElements.forEach(makeDraggable);
-    </script>
-  </body>
+
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        element.style.top = (element.offsetTop - pos2) + "px";
+        element.style.left = (element.offsetLeft - pos1) + "px";
+      }
+
+      function closeDragElement() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+
+    // Make all elements with class 'draggable' draggable
+    document.querySelectorAll('.draggable').forEach(makeDraggable);
+  </script>
+</body>
 </html>
