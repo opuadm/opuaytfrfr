@@ -87,8 +87,10 @@
                 element.style.left = newLeft + "px";
                 element.style.right = '467px';
             } else if (newRight < 467) {
+                element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
                 element.style.right = '467px';
             } else if (newRight > windowWidth - 40) {
+                element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
                 element.style.right = '40px';
             }
         }
@@ -102,10 +104,30 @@
         element.onmousedown = dragMouseDown;
     
         // Update position on window resize
-        window.addEventListener('resize', elementDrag);
+        window.addEventListener('resize', () => {
+            const windowWidth = window.innerWidth;
+            const elementRight = parseInt(window.getComputedStyle(element).right, 10);
+    
+            if (elementRight < 467) {
+                element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
+                element.style.right = '467px';
+            } else if (elementRight > windowWidth - 40) {
+                element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
+                element.style.right = '40px';
+            }
+        });
     
         // Initial call to set the position correctly on load
-        elementDrag();
+        const windowWidth = window.innerWidth;
+        const elementRight = parseInt(window.getComputedStyle(element).right, 10);
+    
+        if (elementRight < 467) {
+            element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
+            element.style.right = '467px';
+        } else if (elementRight > windowWidth - 40) {
+            element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
+            element.style.right = '40px';
+        }
     });
   </script>
 </body>
