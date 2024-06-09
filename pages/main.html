@@ -10,6 +10,7 @@
     .draggable {
       cursor: move;
       position: absolute;
+      right: 40px;
     }
     body {
       margin: 0;
@@ -80,6 +81,25 @@
 
     // Make all elements with class 'draggable' draggable
     document.querySelectorAll('.draggable').forEach(makeDraggable);
+
+    document.addEventListener('DOMContentLoaded', (event) => {
+    const element = document.querySelector('.draggable');
+
+    function updatePosition() {
+        const elementRight = parseInt(window.getComputedStyle(element).right, 10);
+        const newRight = 40 - elementRight;
+
+        if (newRight !== 0) {
+            element.style.right = '40px';
+        }
+    }
+
+    // Adjust the position on window resize
+    window.addEventListener('resize', updatePosition);
+
+    // Initial call to set the position correctly on load
+    updatePosition();
+    });
   </script>
 </body>
 </html>
