@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="window-body has-space">
-      <p>Fixed the moving thing</p>
+      <p>Nvm, doing more fixes</p>
     </div>
   </div>
   
@@ -95,28 +95,7 @@
     
         // Update position on window resize
         window.addEventListener('resize', () => {
-            const windowWidth = window.innerWidth;
-            const windowHeight = window.innerHeight;
-    
-            let elementLeft = element.offsetLeft;
-            let elementTop = element.offsetTop;
-    
-            // Ensure the element stays within the bounds on resize
-            if (elementLeft + element.offsetWidth > windowWidth) {
-                elementLeft = windowWidth - element.offsetWidth;
-            }
-            if (elementTop + element.offsetHeight > windowHeight) {
-                elementTop = windowHeight - element.offsetHeight;
-            }
-            if (elementLeft < 0) {
-                elementLeft = 0;
-            }
-            if (elementTop < 0) {
-                elementTop = 0;
-            }
-    
-            element.style.left = elementLeft + "px";
-            element.style.top = elementTop + "px";
+            ensureElementInBounds();
         });
     
         // Initial call to set the position correctly on load
