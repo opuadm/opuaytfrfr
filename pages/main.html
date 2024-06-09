@@ -10,8 +10,8 @@
     .draggable {
       cursor: move;
       position: absolute;
-      right: 10px;
-      top: 10px;
+      right: 65px;
+      top: 36px;
     }
     body {
       margin: 0;
@@ -88,10 +88,10 @@
 
     function updatePosition() {
         const elementRight = parseInt(window.getComputedStyle(element).right, 10);
-        const newRight = 10 - elementRight;
+        const newRight = 65 - elementRight;
 
         if (newRight !== 0) {
-            element.style.right = '10px';
+            element.style.right = '65px';
         }
     }
 
