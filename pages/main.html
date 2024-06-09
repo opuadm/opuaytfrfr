@@ -84,22 +84,34 @@
     document.querySelectorAll('.draggable').forEach(makeDraggable);
 
     document.addEventListener('DOMContentLoaded', (event) => {
-    const element = document.querySelector('.draggable');
-
-    function updatePosition() {
-        const elementRight = parseInt(window.getComputedStyle(element).right, 10);
-        const newRight = 870 - elementRight;
-
-        if (newRight !== 0) {
-            element.style.right = '870px';
+        const element = document.querySelector('.draggable');
+    
+        function updatePosition() {
+            const windowWidth = window.innerWidth;
+            const elementRect = element.getBoundingClientRect();
+    
+            // Ensure the element is always 870px from the right edge
+            if (windowWidth - elementRect.right !== 870) {
+                element.style.right = '870px';
+            }
+    
+            // Ensure the element does not go offscreen
+            if (elementRect.left < 0) {
+                element.style.left = '0px';
+            }
+            if (elementRect.top < 0) {
+                element.style.top = '0px';
+            }
+            if (elementRect.bottom > window.innerHeight) {
+                element.style.top = (window.innerHeight - elementRect.height) + 'px';
+            }
         }
-    }
-
-    // Adjust the position on window resize
-    window.addEventListener('resize', updatePosition);
-
-    // Initial call to set the position correctly on load
-    updatePosition();
+    
+        // Adjust the position on window resize
+        window.addEventListener('resize', updatePosition);
+    
+        // Initial call to set the position correctly on load
+        updatePosition();
     });
   </script>
 </body>
