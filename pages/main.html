@@ -111,19 +111,30 @@
         });
     
         // Initial call to set the position correctly on load
-        const windowWidth = window.innerWidth;
-        const windowHeight = window.innerHeight;
+        function ensureElementInBounds() {
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
     
-        const elementLeft = element.offsetLeft;
-        const elementTop = element.offsetTop;
+            const elementLeft = element.offsetLeft;
+            const elementTop = element.offsetTop;
     
-        // Ensure the element stays within the bounds on load
-        if (elementLeft + element.offsetWidth > windowWidth) {
-            element.style.left = (windowWidth - element.offsetWidth) + "px";
+            // Ensure the element stays within the bounds on load
+            if (elementLeft + element.offsetWidth > windowWidth) {
+                element.style.left = (windowWidth - element.offsetWidth) + "px";
+            }
+            if (elementTop + element.offsetHeight > windowHeight) {
+                element.style.top = (windowHeight - element.offsetHeight) + "px";
+            }
+            if (elementLeft < 0) {
+                element.style.left = "0px";
+            }
+            if (elementTop < 0) {
+                element.style.top = "0px";
+            }
         }
-        if (elementTop + element.offsetHeight > windowHeight) {
-            element.style.top = (windowHeight - element.offsetHeight) + "px";
-        }
+    
+        // Ensure the element is in bounds on load
+        ensureElementInBounds();
     });
   </script>
 </body>
