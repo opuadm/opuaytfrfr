@@ -71,18 +71,25 @@
             pos3 = e.clientX;
             pos4 = e.clientY;
     
-            const newTop = element.offsetTop - pos2;
-            const newLeft = element.offsetLeft - pos1;
+            let newTop = element.offsetTop - pos2;
+            let newLeft = element.offsetLeft - pos1;
     
             // Ensure the element does not go offscreen on the top or bottom
-            if (newTop >= 0 && newTop <= window.innerHeight - element.offsetHeight) {
-                element.style.top = newTop + "px";
+            if (newTop < 0) {
+                newTop = 0;
+            } else if (newTop > window.innerHeight - element.offsetHeight) {
+                newTop = window.innerHeight - element.offsetHeight;
             }
     
             // Ensure the element does not go offscreen on the left or right
-            if (newLeft >= 0 && newLeft <= window.innerWidth - element.offsetWidth) {
-                element.style.left = newLeft + "px";
+            if (newLeft < 0) {
+                newLeft = 0;
+            } else if (newLeft > window.innerWidth - element.offsetWidth) {
+                newLeft = window.innerWidth - element.offsetWidth;
             }
+    
+            element.style.top = newTop + "px";
+            element.style.left = newLeft + "px";
         }
     
         function closeDragElement() {
@@ -98,16 +105,25 @@
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
     
-            const elementLeft = element.offsetLeft;
-            const elementTop = element.offsetTop;
+            let elementLeft = element.offsetLeft;
+            let elementTop = element.offsetTop;
     
             // Ensure the element stays within the bounds on resize
             if (elementLeft + element.offsetWidth > windowWidth) {
-                element.style.left = (windowWidth - element.offsetWidth) + "px";
+                elementLeft = windowWidth - element.offsetWidth;
             }
             if (elementTop + element.offsetHeight > windowHeight) {
-                element.style.top = (windowHeight - element.offsetHeight) + "px";
+                elementTop = windowHeight - element.offsetHeight;
             }
+            if (elementLeft < 0) {
+                elementLeft = 0;
+            }
+            if (elementTop < 0) {
+                elementTop = 0;
+            }
+    
+            element.style.left = elementLeft + "px";
+            element.style.top = elementTop + "px";
         });
     
         // Initial call to set the position correctly on load
@@ -115,22 +131,25 @@
             const windowWidth = window.innerWidth;
             const windowHeight = window.innerHeight;
     
-            const elementLeft = element.offsetLeft;
-            const elementTop = element.offsetTop;
+            let elementLeft = element.offsetLeft;
+            let elementTop = element.offsetTop;
     
             // Ensure the element stays within the bounds on load
             if (elementLeft + element.offsetWidth > windowWidth) {
-                element.style.left = (windowWidth - element.offsetWidth) + "px";
+                elementLeft = windowWidth - element.offsetWidth;
             }
             if (elementTop + element.offsetHeight > windowHeight) {
-                element.style.top = (windowHeight - element.offsetHeight) + "px";
+                elementTop = windowHeight - element.offsetHeight;
             }
             if (elementLeft < 0) {
-                element.style.left = "0px";
+                elementLeft = 0;
             }
             if (elementTop < 0) {
-                element.style.top = "0px";
+                elementTop = 0;
             }
+    
+            element.style.left = elementLeft + "px";
+            element.style.top = elementTop + "px";
         }
     
         // Ensure the element is in bounds on load
