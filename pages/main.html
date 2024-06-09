@@ -46,18 +46,12 @@
       </div>
     </div>
   </div>
-  <script>
-    window.onload = function() {
-        // Function to change the width of the div
-        function changeWidth() {
-            var div = document.getElementById('progress1');
-            div.style.width = '25%';
-        }
-
-        // Change the width after 3 seconds (3000 milliseconds)
-        setTimeout(changeWidth, 3000);
-    };
-  </script>
+    <script>
+      window.onload = function() {
+          // Animate the width of the div with a delay
+          gsap.to("#progress1", { duration: 1, width: '25%', ease: "power2.inOut", delay: 3 });
+      };
+    </script>
   
   <!-- JavaScript for drag functionality -->
   <script>
