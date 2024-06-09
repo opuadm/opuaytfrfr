@@ -27,6 +27,9 @@
     .blue1 > .title-bar {
       background-color: rgba(0, 38, 189, 0.4)
     }
+    .progress1 {
+      width: 10%;
+    }
   </style>
 </head>
 <body>
@@ -42,19 +45,21 @@
     <div class="window-body has-space">
       <p>IT WORKS :DDD</p>
       <div role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10">
-        <div id="progress1" style="width: 10%"></div>
+        <div id="progress1"></div>
       </div>
     </div>
   </div>
   <script>
-    // Function to change the width of the div
-    function changeWidth() {
-        var div = document.getElementById('progress1');
-        div.style.width = '25%';
-    }
-  
-    // Change the width after 3 seconds (3000 milliseconds)
-    setTimeout(changeWidth, 3000);
+    window.onload = function() {
+        // Function to change the width of the div
+        function changeWidth() {
+            var div = document.getElementById('progress1');
+            div.style.width = '25%';
+        }
+
+        // Change the width after 3 seconds (3000 milliseconds)
+        setTimeout(changeWidth, 3000);
+    };
   </script>
   
   <!-- JavaScript for drag functionality -->
