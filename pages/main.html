@@ -85,13 +85,10 @@
     
             if (newRight >= 467 && newRight <= windowWidth - 40) {
                 element.style.left = newLeft + "px";
-                element.style.right = '467px';
             } else if (newRight < 467) {
                 element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
-                element.style.right = '467px';
             } else if (newRight > windowWidth - 40) {
                 element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
-                element.style.right = '40px';
             }
         }
     
@@ -106,27 +103,25 @@
         // Update position on window resize
         window.addEventListener('resize', () => {
             const windowWidth = window.innerWidth;
-            const elementRight = parseInt(window.getComputedStyle(element).right, 10);
+            const elementLeft = element.offsetLeft;
+            const elementRight = windowWidth - elementLeft - element.offsetWidth;
     
             if (elementRight < 467) {
                 element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
-                element.style.right = '467px';
             } else if (elementRight > windowWidth - 40) {
                 element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
-                element.style.right = '40px';
             }
         });
     
         // Initial call to set the position correctly on load
         const windowWidth = window.innerWidth;
-        const elementRight = parseInt(window.getComputedStyle(element).right, 10);
+        const elementLeft = element.offsetLeft;
+        const elementRight = windowWidth - elementLeft - element.offsetWidth;
     
         if (elementRight < 467) {
             element.style.left = (windowWidth - 467 - element.offsetWidth) + "px";
-            element.style.right = '467px';
         } else if (elementRight > windowWidth - 40) {
             element.style.left = (windowWidth - 40 - element.offsetWidth) + "px";
-            element.style.right = '40px';
         }
     });
   </script>
