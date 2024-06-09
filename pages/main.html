@@ -88,22 +88,18 @@
     
         function updatePosition() {
             const windowWidth = window.innerWidth;
+    
+            // Calculate the right position to keep the element 870px from the right edge
+            const newRight = Math.max(40, windowWidth - 870 - element.offsetWidth);
+            element.style.right = newRight + 'px';
+    
+            // Ensure the element does not go offscreen on the top or bottom
             const elementRect = element.getBoundingClientRect();
-    
-            // Ensure the element is always 870px from the right edge
-            if (windowWidth - elementRect.right !== 870) {
-                element.style.right = '870px';
-            }
-    
-            // Ensure the element does not go offscreen
-            if (elementRect.left < 0) {
-                element.style.left = '0px';
-            }
             if (elementRect.top < 0) {
                 element.style.top = '0px';
             }
             if (elementRect.bottom > window.innerHeight) {
-                element.style.top = (window.innerHeight - elementRect.height) + 'px';
+                element.style.top = (window.innerHeight - element.offsetHeight) + 'px';
             }
         }
     
