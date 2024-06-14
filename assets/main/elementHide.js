@@ -1,4 +1,8 @@
 function showElement(elementId) {
     var element = document.getElementById(elementId);
-    element.style.display = "block";
+    if (element) {
+        element.style.display = "block";
+    } else {
+        console.error(`Element with ID '${elementId}' not found.`);
+    }
 }
