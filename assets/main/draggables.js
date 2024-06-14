@@ -112,12 +112,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const element = document.querySelector('.draggable');
+    const element = document.querySelector('#window1');
 
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
     function dragMouseDown(e) {
-        e = e || window1.event;
+        e = e || window.event;
         e.preventDefault();
         pos3 = e.clientX;
         pos4 = e.clientY;
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function elementDrag(e) {
-        e = e || window1.event;
+        e = e || window.event;
         e.preventDefault();
         pos1 = pos3 - e.clientX;
         pos2 = pos4 - e.clientY;
@@ -139,15 +139,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
         // Ensure the element does not go offscreen on the top or bottom
         if (newTop < 0) {
             newTop = 0;
-        } else if (newTop > window1.innerHeight - element.offsetHeight) {
-            newTop = window1.innerHeight - element.offsetHeight;
+        } else if (newTop > window.innerHeight - element.offsetHeight) {
+            newTop = window.innerHeight - element.offsetHeight;
         }
 
         // Ensure the element does not go offscreen on the left or right
         if (newLeft < 0) {
             newLeft = 0;
-        } else if (newLeft > window1.innerWidth - element.offsetWidth) {
-            newLeft = window1.innerWidth - element.offsetWidth;
+        } else if (newLeft > window.innerWidth - element.offsetWidth) {
+            newLeft = window.innerWidth - element.offsetWidth;
         }
 
         element.style.top = newTop + "px";
@@ -162,19 +162,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Make the element draggable
     element.onmousedown = dragMouseDown;
 
-    // Update position on window1 resize
-    window1.addEventListener('resize', () => {
+    // Update position on window resize
+    window.addEventListener('resize', () => {
         ensureElementInBoundsOnResize();
     });
 
     // Initial call to set the position correctly on load
     function ensureElementInBoundsOnLoad() {
-        const windowWidth = window1.innerWidth;
-        const windowHeight = window1.innerHeight;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
 
         // Set initial position in pixels
-        let initialLeft = windowWidth - 122 - element.offsetWidth; // 486px from the right
-        let initialTop = windowHeight - 53 - element.offsetHeight;  // 211px from the bottom
+        let initialLeft = windowWidth - 124 - element.offsetWidth; // 486px from the right
+        let initialTop = windowHeight - 35 - element.offsetHeight;  // 211px from the bottom
 
         // Ensure the element stays within the bounds on load
         if (initialLeft + element.offsetWidth > windowWidth) {
@@ -196,8 +196,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Ensure the element stays within the bounds on resize without resetting its position
     function ensureElementInBoundsOnResize() {
-        const windowWidth = window1.innerWidth;
-        const windowHeight = window1.innerHeight;
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
 
         let elementLeft = element.offsetLeft;
         let elementTop = element.offsetTop;
