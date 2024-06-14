@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const windowHeight = window.innerHeight;
 
         // Set initial position in pixels
-        let initialLeft = windowWidth - 124 - element.offsetWidth; // 486px from the right
+        let initialLeft = windowWidth - 24 - element.offsetWidth; // 486px from the right
         let initialTop = windowHeight - 35 - element.offsetHeight;  // 211px from the bottom
 
         // Ensure the element stays within the bounds on load
