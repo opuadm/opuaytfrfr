@@ -1,0 +1,13 @@
+<div class="window blue1 active draggable" id="window" style="max-width: 750px; width: 400px;">
+  <div class="title-bar">
+    <div class="title-bar-text">Main Page</div>
+    <div class="title-bar-controls">
+      <button aria-label="Minimize"></button>
+      <button aria-label="Maximize"></button>
+      <button aria-label="Close" onclick="document.querySelector('.window.blue1.active.draggable').style.display='none'"></button>
+    </div>
+  </div>
+  <div class="window-body has-space">
+    <p>Placeholder</p>
+  </div>
+</div>
