@@ -55,6 +55,7 @@
       <p style="font-size: 20px">Important Note: This website is still WIP!</p>
       <button onclick="showElement('window1')">Social Medias</button>
       <button onclick="showElement('window2')">Changelog</button>
+      <button onclick="showElement('window3')">Ratings</button>
     </div>
   </div>
   <div class="window blue2 active draggable" id="window1" style="max-width: 750px; width: 465px; display: none;">
@@ -94,6 +95,20 @@
     </div>
     <div class="window-body has-space">
       <p style="font-size: 24px">Not available yet, instead, <a style="color: #0073e6" onclick="window.open('https://github.com/opuadm/opuaytfrfr/commits/main/', '_blank')">check the list of commits on github.</a> (Note: i may sometimes not type any commit message and leave the default one but u can still check in it what i did change)</p>
+    </div>
+  </div>
+  <div class="window blue4 active draggable" id="window3" style="max-width: 750px; width: 820px; display: none;">
+    <div class="title-bar">
+      <div class="title-bar-text">Ratings</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.blue4').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+      <div class="elfsight-app-7ff13e5b-3539-4f8a-b266-7712be3c83a5" data-elfsight-app-lazy></div>
     </div>
   </div>
   <script src="../assets/main/elementHide.js"></script>
