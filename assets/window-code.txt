@@ -1,4 +1,4 @@
-<div class="window blue1 active draggable" id="window" style="max-width: 750px; width: 400px;">
+<div class="window blue1 active draggable" id="window" style="max-width: 750px; width: 400px; display: none">
   <div class="title-bar">
     <div class="title-bar-text">Main Page</div>
     <div class="title-bar-controls">
