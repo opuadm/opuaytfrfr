@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const startButton = document.getElementById('start-button');
-    const startMenu = document.getElementById('start-menu');
+    const startButton = document.querySelector('.start-button');
+    const startMenu = document.querySelector('.start-menu');
 
     if (startButton && startMenu) {
         console.log('Elements found');
