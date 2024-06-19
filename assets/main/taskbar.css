@@ -41,7 +41,7 @@ body {
     position: fixed;
     bottom: 40px; /* Position it right above the taskbar */
     left: 10px; /* Align it with the start button */
-    width: 350px;
+    width: 750px;
     border-radius: 5px;
     background-color: rgba(0, 93, 255, 0.43);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
