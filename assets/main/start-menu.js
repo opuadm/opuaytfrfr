@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (startButton && startMenu) {
         startButton.addEventListener('click', function () {
             if (startMenu.style.display === 'none' || startMenu.style.display === '') {
-                startMenu.style.display = 'block';
+                startMenu.style.display = 'fixed';
             } else {
                 startMenu.style.display = 'none';
             }
