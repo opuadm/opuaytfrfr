@@ -20,10 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const startMenu = document.querySelector('.taskbar');
 
     if (startButton && startMenu) {
-        console.log('Elements found');
         startButton.addEventListener('click', function () {
             if (startMenu.style.display === 'none' || startMenu.style.display === '') {
-                startMenu.style.display = 'fixed';
+                startMenu.style.display = 'flex';
             } else {
                 startMenu.style.display = 'none';
             }
