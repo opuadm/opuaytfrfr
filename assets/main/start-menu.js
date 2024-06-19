@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const startButton = document.querySelector('.taskbartoggle');
+    const startButton = document.querySelector('.toggle1');
     const startMenu = document.querySelector('.taskbar');
 
     if (startButton && startMenu) {
