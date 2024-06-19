@@ -3,10 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const startMenu = document.querySelector('.start-menu');
 
     if (startButton && startMenu) {
-        console.log('Elements found');
-        
         startButton.addEventListener('click', function () {
-            console.log('Start button clicked');
             if (startMenu.style.display === 'none' || startMenu.style.display === '') {
                 startMenu.style.display = 'block';
             } else {
@@ -19,14 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    const startButton = document.querySelector('.taskbarbutton');
+    const startButton = document.querySelector('.taskbartoggle');
     const startMenu = document.querySelector('.taskbar');
 
     if (startButton && startMenu) {
-        console.log('Elements found');
-        
         startButton.addEventListener('click', function () {
-            console.log('Start button clicked');
             if (startMenu.style.display === 'none' || startMenu.style.display === '') {
                 startMenu.style.display = 'block';
             } else {
