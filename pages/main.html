@@ -57,6 +57,7 @@
       <button onclick="showElement('window2')">Changelog</button>
       <button onclick="window.open('https://github.com/opuadm/opuaytfrfr', '_blank')">Source Code</button>
       <button onclick="showElement('window3')">Programs</button>
+      <button onclick="showElement('window4')">Some Toggles Idk</button>
     </div>
   </div>
   <div class="window blue2 active draggable" id="window1" style="max-width: 750px; width: 465px; display: none;">
@@ -101,7 +102,7 @@
       <p style="font-size: 24px">Not available yet, instead, <a style="color: #0073e6" onclick="window.open('https://github.com/opuadm/opuaytfrfr/commits/main/', '_blank')">check the list of commits on github.</a> (Note: i may sometimes not type any commit message and leave the default one but u can still check in it what i did change)</p>
     </div>
   </div>
-  <div class="window blue4 active draggable" id="window3" style="max-width: 750px; width: 400px; display: none">
+  <div class="window blue4 active draggable" id="window3" style="max-width: 750px; width: 435px; display: none">
     <div class="title-bar">
       <div class="title-bar-text">Programs</div>
       <div class="title-bar-controls">
@@ -112,6 +113,19 @@
     </div>
     <div class="window-body has-space">
       <p>Soon!</p>
+    </div>
+  </div>
+  <div class="window blue5 active draggable" id="window4" style="max-width: 750px; width: 340px; display: none">
+    <div class="title-bar">
+      <div class="title-bar-text">Toggles</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue4.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <button class="taskbartoggle">Taskbar</button>
     </div>
   </div>
   <script src="../assets/main/elementHide.js"></script>
