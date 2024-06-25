@@ -62,6 +62,7 @@
       <button onclick="showElement('window3')">Programs</button>
       <span style="display: block; margin-bottom: 0.25em"></span>
       <button onclick="showElement('window4')">Some Toggles Idk</button>
+      <button onclick="showElement('window5')">Status Page</button>
     </div>
   </div>
   <div class="window blue2 active draggable" id="window1" style="max-width: 750px; width: 465px; display: none;">
@@ -131,6 +132,19 @@
     <div class="window-body has-space">
       <button class="toggle1">Taskbar</button>
       <button class="toggle2">Taskbar + Start Menu</button>
+    </div>
+  </div>
+  <div class="window blue6 active draggable" id="window5" style="max-width: 750px; width: 642px; display: none">
+    <div class="title-bar">
+      <div class="title-bar-text">Toggles</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue6.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+        <iframe src="https://stats.opuadm.hstn.me"></iframe>
     </div>
   </div>
   <script src="../assets/main/elementHide.js"></script>
