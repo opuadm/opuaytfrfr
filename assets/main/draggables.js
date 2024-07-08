@@ -677,7 +677,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
-    const element = document.querySelector('#window5');
+    const element = document.querySelector('#window6');
 
     let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
