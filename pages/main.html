@@ -57,6 +57,7 @@
       <p style="font-size: 16px">Note: This website is made for screens around 1920x1080 and larger.</p>
       <p style="font-size: 18px">Info: I also don't know what to add to this website. Please give me ideas.</p>
       <iframe src="https://stats.opuadm.hstn.me/badge?theme=light" height="30" frameborder="0" scrolling="no"></iframe>
+      <div class="announcekit-widget">What's new</div>
       <button onclick="showElement('window1')">Social Medias</button>
       <button onclick="showElement('window2')">Changelog</button>
       <button onclick="window.open('https://github.com/opuadm/opuaytfrfr', '_blank')">Source Code</button>
@@ -160,23 +161,34 @@
     </div>
     <div class="window-body has-space">
       <div class="announcekit-widget"></div>
-      <script>
-        window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
-          window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
-        });
-      
-        window.announcekit.push({
-          "widget": "https://announcekit.co/widgets/v2/2PfVzG",
-          "selector": ".announcekit-widget",
-          "embed": true
-        })
-      </script>
-      <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
     </div>
   </div>
   <script src="../assets/main/elementHide.js"></script>
   <script src="../assets/main/draggables.js"></script>
   <script src="../assets/main/start-menu.js"></script>
   <script src='//eu.fw-cdn.com/12835438/811005.js' chat='true'></script>
+  <script>
+    window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
+      window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
+    });
+    
+    window.announcekit.push({
+      "widget": "https://announcekit.co/widgets/v2/2Qok5W",
+      "selector": ".announcekit-widget"
+    })
+  </script>
+  <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
+  <script>
+    window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
+      window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
+    });
+  
+    window.announcekit.push({
+      "widget": "https://announcekit.co/widgets/v2/2PfVzG",
+      "selector": ".announcekit-widget",
+      "embed": true
+    })
+  </script>
+  <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
 </body>
 </html>
