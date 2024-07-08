@@ -64,6 +64,7 @@
       <span style="display: block; margin-bottom: 0.25em"></span>
       <button onclick="showElement('window4')">Some Toggles Idk</button>
       <button onclick="showElement('window5')">Status Page</button>
+      <button onclick="showElement('window6')">Announcements</button>
     </div>
   </div>
   <div class="window blue2 active draggable" id="window1" style="max-width: 750px; width: 465px; display: none;">
@@ -146,6 +147,31 @@
     </div>
     <div class="window-body has-space">
         <iframe src="https://stats.opuadm.hstn.me" style="height: 100%; width: 100%"></iframe>
+    </div>
+  </div>
+  <div class="window blue7 active draggable" id="window6" style="max-width: 750px; width: 700px; display: none">
+    <div class="title-bar">
+      <div class="title-bar-text">Main Page</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue1.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <div class="announcekit-widget"></div>
+      <script>
+        window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
+          window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
+        });
+      
+        window.announcekit.push({
+          "widget": "https://announcekit.co/widgets/v2/2PfVzG",
+          "selector": ".announcekit-widget",
+          "embed": true
+        })
+      </script>
+      <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
     </div>
   </div>
   <script src="../assets/main/elementHide.js"></script>
