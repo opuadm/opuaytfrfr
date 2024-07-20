@@ -1,0 +1,4 @@
+Happy phone
+Neutral phone
+Angry phone
+Sad phone
