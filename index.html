@@ -1,12 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Opua's Website</title>
-    <script>window.location.replace("https://z.opuadm.hstn.me/pages/main");</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
+  <link rel="stylesheet" href="https://unpkg.com/7.css">
+  <link rel="stylesheet" href="../assets/main/taskbar.css">
+  <title>Opua's Website - Main</title>
+  <style>
+    /* Additional CSS for draggable wisndow */
+    .draggable {
+      cursor: move;
+      position: absolute;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('https://wparena.com/wp-content/uploads/2009/09/img0.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100vh;
+    }
+    body, html {
+      overflow: hidden;
+    }
+    .window::before,
+    .window > .title-bar {
+      background-color: rgba(0, 38, 189, 0.25)
+    }
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
 </head>
 <body>
-    <div class="welcome">
-        <a href="https://z.opuadm.hstn.me/pages/main/">Redirect<a>
+  <div class="taskbar" style="display: flex">
+    <div class="start-button">
+        <img src="../assets/images/start-menu7nn.png" alt="Start">
     </div>
+  </div>
+  <div class="start-menu" id="start-menu">
+    <p style="color: #fffff">Start Menu Content</p>
+  </div>
+  <div class="window blue1 active draggable" id="window" style="max-width: 750px; width: 400px;">
+    <div class="title-bar">
+      <div class="title-bar-text">Main Page</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue1.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <p>Welcome to the actual Main Page! :D</p>
+      <p>Info: I got a free subdomain so i moved my website from opuadm.github.io/opuaytfrfr to z.opuadm.hstn.me</p>
+      <p style="font-size: 20px">Important Note: This website is still WIP!</p>
+      <p style="font-size: 24px">MOVING THIS WEBSITE TO <a href="https://opua.se/">OPUA.SE</a> SOON AND MAKING THIS WEBSITE BE CLOSED SOURCE!!!! (Note, idk when exactly)</p>
+      <iframe src="https://stats.opuadm.hstn.me/badge?theme=light" height="30" frameborder="0" scrolling="no"></iframe>
+      <button onclick="announcekit.widget$2W4zKg.open()">Announcements Popup</button>
+      <button onclick="showElement('window1')">Social Medias</button>
+      <button onclick="showElement('window2')">Changelog</button>
+      <span style="display: block; margin-bottom: 0.25em"></span>
+      <button onclick="window.open('https://github.com/opuadm/opuaytfrfr', '_blank')">Source Code</button>
+      <button onclick="showElement('window3')">Programs</button>
+      <span style="display: block; margin-bottom: 0.25em"></span>
+      <button onclick="showElement('window4')">Some Toggles Idk</button>
+      <button onclick="showElement('window5')">Status Page</button>
+      <button onclick="showElement('window6')">Announcements</button>
+      <span style="display: block; margin-bottom: 0.25em"></span>
+      <button onclick="window.open('https://x.com/intent/post?hashtags=iptv&original_referer=https%3A%2F%2Fz.opuadm.hstn.me%2F&text=i+need+iptv+my+metamask+wallet+got+hacked+my+trustfix+trust+wallet+got+compromised+and+my+bitcoins+got+leaked+i+need+ethereum+doxcoin+litecoin+all+iptv+coins&url=https%3A%2F%2Fz.opuadm.hstn.me%2Fpages%2Fmain&via=OpuaYTReal', '_blank')">Click me to post smth on twitter</button>
+    </div>
+  </div>
+  <div class="window blue2 active draggable" id="window1" style="max-width: 750px; width: 465px; display: none;">
+    <div class="title-bar">
+      <div class="title-bar-text">Social Medias</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.blue2').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <p>My Current Social Medias:</p>
+      <ul class="tree-view has-container">
+      <li>
+        <details>
+          <summary style="text-shadow: 0px 2px 5px">Main Accounts</summary>
+          <ul>
+            <li><a style="text-shadow: 0px 2px 5px; font-size: 18px" onclick="window.open('https://x.com/OpuaYTReal', '_blank')">Twitter (Click Me to Open)</a></li>
+            <li><a style="text-shadow: 0px 2px 5px; font-size: 18px" onclick="window.open('https://www.youtube.com/@opuaytreal/videos', '_blank')">YouTube (Click Me to Open)</a></li>
+            <li><a style="text-shadow: 0px 2px 5px; font-size: 18px" onclick="window.open('https://opuayt.carrd.co/', '_blank')">Carrd (Click Me To Open)</a></li>
+            <li><a style="text-shadow: 0px 2px 5px; font-size: 18px" onclick="window.open('https://github.com/opuadm', '_blank')">Github (Click Me To Open)</a></li>
+            <li><a style="text-shadow: 0px 2px 5px; font-size: 18px" onclick="window.open('https://discord.gg/vyUkKYbMTz', '_blank')">Discord Server (Click Me To Open)</a></li>
+            <li><a style="text-shadow: 0px 2px 5px; font-size: 18px" onclick="window.open('https://discord.com/users/897192697444565053/', '_blank')">Discord Profile (Click Me To Open)</a></li>
+            <li><a style="text-shadow: 0px 2px 5px; font-size: 18px; color: #7d7901" onclick="window.open('https://scratch.mit.edu/users/opuadm/', '_blank')">Scratch Profile (Click Me To Open) (Note: Dont check my old projects, they're weird and kinda cringy tbh. Proceed with caution.)</a></li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+    </div>
+  </div>
+  <div class="window blue3 active draggable" id="window2" style="max-width: 750px; width: 442px; display: none;">
+    <div class="title-bar">
+      <div class="title-bar-text">Changelog</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.blue3').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <p style="font-size: 24px">Not available yet, instead, <a style="color: #0073e6" onclick="window.open('https://github.com/opuadm/opuaytfrfr/commits/main/', '_blank')">check the list of commits on github.</a> (Note: i may sometimes not type any commit message and leave the default one but u can still check in it what i did change)</p>
+    </div>
+  </div>
+  <div class="window blue4 active draggable" id="window3" style="max-width: 750px; width: 435px; display: none">
+    <div class="title-bar">
+      <div class="title-bar-text">Programs</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue4.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <p>Soon!</p>
+    </div>
+  </div>
+  <div class="window blue5 active draggable" id="window4" style="max-width: 750px; width: 340px; display: none">
+    <div class="title-bar">
+      <div class="title-bar-text">Toggles</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue5.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+      <button class="toggle1">Taskbar</button>
+      <button class="toggle2">Taskbar + Start Menu</button>
+    </div>
+  </div>
+  <div class="window blue6 active draggable" id="window5" style="max-width: 750px; width: 642px; display: none">
+    <div class="title-bar">
+      <div class="title-bar-text">Toggles</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue6.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space">
+        <iframe src="https://stats.opuadm.hstn.me" style="height: 100%; width: 100%"></iframe>
+    </div>
+  </div>
+  <div class="window blue7 active draggable" id="window6" style="max-width: 750px; width: 700px; height: 600px; display: none">
+    <div class="title-bar">
+      <div class="title-bar-text">Announcements</div>
+      <div class="title-bar-controls">
+        <button aria-label="Minimize"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="document.querySelector('.window.blue7.active.draggable').style.display='none'"></button>
+      </div>
+    </div>
+    <div class="window-body has-space" style="height: 575px">
+      <div class="announcekit-widget"></div>
+    </div>
+  </div>
+  <script src="../assets/main/elementHide.js"></script>
+  <script src="../assets/main/draggables.js"></script>
+  <script src="../assets/main/start-menu.js"></script>
+  <script>
+    window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
+      window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
+    });
+  
+    window.announcekit.push({
+      "widget": "https://announcekit.co/widgets/v2/2PfVzG",
+      "selector": ".announcekit-widget",
+      "embed": true
+    })
+  </script>
+  <script>
+    window.announcekit = (window.announcekit || { queue: [], on: function(n, x) {
+      window.announcekit.queue.push([n, x]); }, push: function(x) { window.announcekit.queue.push(x); }
+    });
+  
+    window.announcekit.push({
+      "widget": "https://announcekit.co/widgets/v2/2W4zKg",
+      "name": "2W4zKg"
+    })
+  </script>
+  <script async src="https://cdn.announcekit.app/widget-v2.js"></script>
 </body>
 </html>
