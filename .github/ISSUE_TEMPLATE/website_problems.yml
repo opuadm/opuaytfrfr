@@ -1,6 +1,7 @@
 name: "Website Bug Report"
 description: "Report any bugs about this website here!"
 title: "[WEBSITE BUG]:"
+labels: bug
 body:
 - type: markdown
   attributes:
