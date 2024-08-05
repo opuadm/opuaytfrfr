@@ -7,7 +7,7 @@ body:
 - type: markdown
   attributes:
     value: |
-      "### Thanks for wanting to fill out this form! This will help us very much in fixing bugs we dont know that exists."
+      ### Thanks for wanting to fill out this form! This will help us very much in fixing bugs we dont know that exists.
 - type: dropdown
   id: browser
   attributes:
