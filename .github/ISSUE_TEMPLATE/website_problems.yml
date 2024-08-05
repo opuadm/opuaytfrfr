@@ -29,3 +29,10 @@ body:
       - Other Browser
   validations:
     required: true
+- type: textarea
+  id: bugtext
+  attributes:
+    label: Explain what the bug does here.
+    description: "Text about bug here"
+  validations:
+    required: true
